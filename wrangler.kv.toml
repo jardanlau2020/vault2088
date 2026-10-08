@@ -2,6 +2,13 @@ name = "nodewarden"
 main = "src/index.ts"
 compatibility_date = "2024-01-01"
 
+workers_dev = true
+preview_urls = true
+
+routes = [
+  { pattern = "vault.2088x.com", custom_domain = true }
+]
+
 [build]
 command = "npm run build"
 
@@ -18,6 +25,7 @@ crons = [ "*/5 * * * *" ]
 [[d1_databases]]
 binding = "DB"
 database_name = "nodewarden-db"
+database_id = "1a0ccd57-a5bc-4ffc-87b8-a323df459b94"
 
 [[durable_objects.bindings]]
 name = "NOTIFICATIONS_HUB"
@@ -29,6 +37,7 @@ class_name = "BackupTransferRunner"
 
 [[kv_namespaces]]
 binding = "ATTACHMENTS_KV"
+id = "900795a4f0c740d3a44dafdbd272c8ee"
 
 [[migrations]]
 tag = "v1-notifications-hub"
